@@ -1,0 +1,16 @@
+services:
+  front-end:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    container_name: frontend_service
+    restart: always
+    networks:
+     - rede_cifras
+
+networks:
+  rede_cifras:
+    driver: bridge
+  #pode ser private_network e public_network para cada interação entre containeres
